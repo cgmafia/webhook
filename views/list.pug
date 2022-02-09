@@ -1,0 +1,36 @@
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title WebHook Tracker
+    style(type='text/css').
+    
+    body(style='margin:0; padding:0; background-color:#F2F2F2;')
+    p The summary of the requests completed can be seen below:
+    center
+    table(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#F2F2F2')
+        thead
+            tr
+              th #
+              th ID
+              th Action
+              th Entity Type
+              th Time 
+              th Modified fields 
+              th name
+              th File Type 
+              th Created @
+        tbody
+          each result in results
+              tr
+                td #{result.id}
+                td #{result.r_id}
+                td #{result.r_action}
+                td #{result.r_entity_type}
+                td #{result.r_time}
+                td #{result.r_modified_fields}
+                td #{result.r_name}
+                td #{result.r_file_type}
+                td #{result.created_at}
+    p created by anandvenkatarama@gmail.com
