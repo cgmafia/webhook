@@ -4,14 +4,19 @@ A simple webhook test for listening to events. Bundled with a SQLite3 DB, a ligh
 
 ## Instructions for setup
 
-Dependencies: NodeJS, NPM, Express, Pug & Nodemon
+Dependencies: NodeJS, NPM, Express, Pug, Nodemon, Docker
 
 - Install dependencies with ```npm install``` command
-- Run ```npm run start```
-- Bse URL is ```http://localhost:3000```
+- Run ```npm run start``` in local to test
+- Base URL is ```http://localhost:3000```
 - Visit ```/track``` for viewing updates on HTML
 - Post request with mock object to test at ```/event```
 - It contains auto trimmer for DB records older than 7 days
+- Dockerfile is included for containerizing the app
+- To build docker image ```docker build . -t <your username>/webhook```
+- ```docker images``` to confirm the build is ready
+- Run the image ```docker run -p 49160:3000 -d <your username>/webhook```
+- ```Docker ps``` to see if its running
 
 ## URL Endpoints
 - ```/event```
